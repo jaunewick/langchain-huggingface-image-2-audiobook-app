@@ -14,7 +14,7 @@ Here’s a quick demo of the app in action :
 ## Features
 - **Image-to-text :** Converts images to descriptive text using the BLIP model.
 - **Story Generation :** Creates a short story based on the extracted text using Mistral-7B-Instruct-v0.3 model.
-- **Text to Speech :** Transforms the generated story into an audiobook using the ESPnet2 TTS model.
+- **Text-to-Speech :** Transforms the generated story into an audiobook using the ESPnet2 TTS model.
 
 ## Requirements
 - Python 3.8+
