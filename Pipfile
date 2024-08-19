@@ -11,6 +11,8 @@ tf-keras = "*"
 pillow = "*"
 langchain = "*"
 langchain-huggingface = "*"
+streamlit = "*"
+watchdog = "*"
 
 [dev-packages]
 

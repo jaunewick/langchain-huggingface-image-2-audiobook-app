@@ -5,6 +5,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_huggingface import HuggingFaceEndpoint
 import requests
+import streamlit as st
 
 load_dotenv(find_dotenv())
 HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
@@ -45,8 +46,6 @@ def generate_story(scenario):
     print(story)
     return story
 
-scenario = img2text("photo.png")
-story = generate_story(scenario)
 
 #text2speech
 def text2speech(story):
@@ -59,4 +58,26 @@ def text2speech(story):
     with open('audio.flac', 'wb') as file:
         file.write(response.content)
 
-text2speech(story)
+def main():
+    st.set_page_config(page_title="img 2 audiobook", page_icon="🤗")
+    st.header("Transform images into engaging short audiobooks")
+    uploaded_file = st.file_uploader("Choose an image...", type="png")
+
+    if uploaded_file is not None:
+        bytes_data = uploaded_file.getvalue()
+        with open(uploaded_file.name, "wb") as file:
+            file.write(bytes_data)
+        st.image(uploaded_file, caption="Uploaded Image.", use_column_width=True)
+        scenario = img2text(uploaded_file.name)
+        story = generate_story(scenario)
+        text2speech(story)
+
+        with st.expander("scenario"):
+            st.write(scenario)
+        with st.expander("story"):
+            st.write(story)
+
+        st.audio("audio.flac")
+
+if __name__ == '__main__':
+    main()
