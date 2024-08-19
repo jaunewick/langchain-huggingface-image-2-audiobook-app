@@ -9,6 +9,8 @@ transformers = "*"
 tensorflow = "*"
 tf-keras = "*"
 pillow = "*"
+langchain = "*"
+langchain-huggingface = "*"
 
 [dev-packages]
 
