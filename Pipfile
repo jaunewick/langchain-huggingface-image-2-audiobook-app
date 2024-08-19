@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+python-dotenv = "*"
+transformers = "*"
+tensorflow = "*"
+tf-keras = "*"
+pillow = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
