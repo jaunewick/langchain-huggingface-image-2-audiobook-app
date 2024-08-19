@@ -1,4 +1,4 @@
-# langchain-huggingface-image-audiobooks
+# langchain-huggingface-image-2-audiobooks-app
 
 This project converts images into short, narrated audiobooks using Langchain, Hugging Face, and Streamlit.
 
@@ -9,7 +9,7 @@ Here’s a quick demo of the app in action :
 2. The app extracts the text, generates a story, and converts it to an audiobook.
 3. The audiobook is available for playback directly on the app.
 
-![live demo mp4](.img/live_demo.mp4)
+[(https://github.com/user-attachments/assets/944e93bd-073a-420b-b688-34c803400109)](https://github.com/user-attachments/assets/944e93bd-073a-420b-b688-34c803400109)
 
 ## Features
 - **Image-to-text :** Converts images to descriptive text using the BLIP model.
