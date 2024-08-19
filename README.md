@@ -27,8 +27,8 @@ Here’s a quick demo of the app in action :
 ## Installation
 1. **Clone the repository :**
 ```bash
-git clone https://github.com/jaunewick/langchain-huggingface-image-2-audiobooks-app.git
-cd langchain-huggingface-image-2-audiobooks-app
+git clone https://github.com/jaunewick/langchain-huggingface-image-2-audiobook-app.git
+cd langchain-huggingface-image-2-audiobook-app
 ```
 
 2. **Install the required packages using Pipenv :**
