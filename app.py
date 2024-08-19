@@ -1,10 +1,13 @@
+import os
 from dotenv import find_dotenv, load_dotenv
 from transformers import pipeline
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain_huggingface import HuggingFaceEndpoint
+import requests
 
 load_dotenv(find_dotenv())
+HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # img2text
 def img2text(url):
@@ -46,4 +49,14 @@ scenario = img2text("photo.png")
 story = generate_story(scenario)
 
 #text2speech
+def text2speech(story):
+    API_URL = "https://api-inference.huggingface.co/models/espnet/kan-bayashi_ljspeech_vits"
+    headers = {"Authorization": f"Bearer {HUGGINGFACEHUB_API_TOKEN}"}
+    payloads = {
+        "inputs": story
+    }
+    response = requests.post(API_URL, headers=headers, json=payloads)
+    with open('audio.flac', 'wb') as file:
+        file.write(response.content)
 
+text2speech(story)
